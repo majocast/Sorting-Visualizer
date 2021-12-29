@@ -20,7 +20,9 @@ body {
   background-color: royalblue;
   color: white;
 }
+
 .cell-2 {
+  text-align: center;
   grid-row: 2;
   grid-column: 1/4;
   background-color: black;
@@ -29,6 +31,13 @@ body {
 
 .cell-1>button {
 
+}
+
+.element-test {
+  background-color: royalblue;
+  display: inline-block;
+  width: 10px;
+  margin: 2px;
 }
 
 #projectTitle {

@@ -7,16 +7,23 @@
   </head>
   <body>
     <div class="grid-1">
-      <div class="cell-1">
+      <div class="cell-1"> <!--navigation container-->
         navigation
         <h1 id='projectTitle'>Sorting Visualizer</h1>
-        <button type="newArray" name="newArray">Generate New Array</button>
-        <button type="Bubble" name="Bubble Sort">Bubble Sort</button>
-
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <button type="newArray" name="newArray" onclick="newArray();">Generate New Array</button>
+        <button type="Bubble" name="Bubble Sort" onclick="selectedSort();">Bubble Sort</button>
       </div>
-      <div class="cell-2">
-        container
+      <div class="cell-2"><!--container for sorting elements-->
+
       </div>
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/newArray.js"></script>
+  <script type="text/javascript" src="js/buttonSelector.js"></script>
+  <script type="text/javascript" src="js/bubbleSort.js"></script>
+  <script type="text/javascript" src="js/swap.js"></script>
 </html>
