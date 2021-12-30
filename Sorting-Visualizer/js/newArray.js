@@ -4,11 +4,10 @@ var array = new Array();
 window.onload = function generateArray() {
   var parameter = document.getElementById('myRange').value;
   for(var i = 0; i<parameter; i++) {
-    var length = randomInt(5, 100);
+    var length = randomInt(10, 100);
     console.log(length);
     var newElement = document.createElement('div');
     newElement.className = "element-test";
-    newElement.setAttribute('id', i);
     newElement.style.height = length + "px";
     newElement.name = i;
     container.appendChild(newElement);
@@ -23,7 +22,7 @@ function newArray() {
   container.innerHTML = "";
   array = new Array();
   for(var i = 0; i<parameter; i++) {
-    var length = randomInt(5, 100);
+    var length = randomInt(10, 100);
     var newElement = document.createElement('div');
     newElement.className = "element-test";
     newElement.style.height = length + "px";
@@ -36,7 +35,7 @@ function newArray() {
 }
 
 function randomInt(min, max) {
-  var int = Math.floor(Math.random() * (max-min));
+  var int = Math.floor(Math.random() * (max-min)) + 1;
   console.log(int);
   return int;
 }

@@ -1,38 +1,55 @@
-function bubbleSort() {
+async function bubbleSort(delay = 50) {
   console.log("bubble sort function");
-  let bars = document.querySelectorAll('element-test');
-  let length = array.length;
-  let checked;
-  do {
-    checked = false;
-    for(let i = 0; i<length; i++) {
-      if(array[i] > array[i + 1]) {
-        let tmp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = tmp;
+  let bars = document.querySelectorAll('.element-test');
+  console.log(bars);
+  var min_idx = 0;
+  for(let i = 0; i<bars.length; i++) {
+    bars[i].style.backgroundColor = "orange";
+    min_idx = i;
+    for(let j = i+1; j<bars.length; j++) {
+      bars[j].style.backgroundColor = "red";
 
-        checked = true;
+      //pauses the execution for 300 ms
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 50)
+      );
+      // To store the integer value of jth bar to var1
+      var val1 = parseInt(bars[j].style.height);
+      console.log(val1);
+      // To store the integer value of (min_idx)th bar to var2
+      var val2 = parseInt(bars[min_idx].style.height);
+      console.log(val2);
+
+      // Compare val1 & val2
+      if (val1 < val2) {
+        if (min_idx !== i) {
+
+          // Provide skyblue color to the (min-idx)th bar
+          bars[min_idx].style.backgroundColor = "  rgb(24, 190, 255)";
+        }
+        min_idx = j;
+      } else {
+        // Provide skyblue color to the jth bar
+        bars[j].style.backgroundColor = "  rgb(24, 190, 255)";
       }
     }
-  } while(checked);
-  let swap1 = document.getElementById('0');
-  let swap2 = document.getElementById('1');
-  var tmp = swap1.style.height;
-  swap1.style.height = swap2.style.height;
-  swap2.style.height = tmp;
-  console.log("array sorted");
-}
-/*
-let length = array.length;
-let checked;
-do {
-  checked = false;
-  for(let i = 0; i<length; i++) {
+    var temp1 = bars[min_idx].style.height;
+    bars[min_idx].style.height = bars[i].style.height;
+    bars[i].style.height = temp1;
+    // To pause the execution of code for 300 milliseconds
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, 50)
+    );
 
-    }
+    // Provide skyblue color to the (min-idx)th bar
+    bars[min_idx].style.backgroundColor = "  rgb(24, 190, 255)";
+
+    // Provide lightgreen color to the ith bar
+    bars[i].style.backgroundColor = " rgb(49, 226, 13)";
   }
-} while(checked) {
-  console.log(array);
   console.log("array sorted");
 }
-*/
