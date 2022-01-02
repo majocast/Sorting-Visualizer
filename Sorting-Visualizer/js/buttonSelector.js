@@ -6,6 +6,10 @@ function selectedSort() {
       console.log('running bubble sort');
       bubbleSort();
       break;
+    case "Quick Sort":
+      console.log('running quick sort');
+      quickSort();
+      break;
     default:
       console.log('error selector');
       break;
