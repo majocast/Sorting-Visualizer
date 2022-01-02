@@ -1,33 +1,12 @@
-/*
-$.fn.animatePrependTo = function(sel, speed) {
-    var $this = this,
-        newEle = $this.clone(true).prependTo(sel),
-        newPos = newEle.position();
-    newEle.hide();
-    $this.css('position', 'absolute').animate(newPos, speed, function() {
-        newEle.show();
-        $this.remove();
-    });
-    return newEle;
-};
+function swap(bars, item1, item2) {
+  //assign red to both elements
+  bars[item1].style.backgroundColor = "red";
+  bars[item2].style.backgroundColor = "red";
 
-$('#bubbleSort').on("click", function() {
-	var tmp = $('#0').parent();
-  $('#0').animatePrependTo($("#1").parent(),1000);
-	$('#1').animatePrependTo(tmp,1000);
-});
-*/
-/*
-function swapDivs(element1, element2) {
-  console.log("swap function runniing");
-	var tmp = element1;
-  element1.animatePrependTo(element2, 1000);
-	element2.animatePrependTo(tmp,1000);
-}
+  //perform swap
+  let temp = bars[item1].style.height;
+  bars[item1].style.height = bars[item2].style.height;
+  bars[item2].style.height = temp;
 
-function swapNums(element1, element2) {
-  var tmp = element1;
-  element1 = element2;
-  element2 = tmp;
+  //set color back
 }
-*/
