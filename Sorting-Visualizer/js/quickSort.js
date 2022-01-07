@@ -1,34 +1,71 @@
-async function quickSort(delay = 50) {
-    console.log('quick sort function');
-    var bars = document.querySelectorAll('.element-test');
-    console.log(bars);
+async function quick(delay = 50) {
+  let bars = document.querySelectorAll('.element-test');
+  console.log("quick sort running");
 
-    //determine the pivot and set the color to yellow
-    var pivot = bars[bars.length - 1];
-    bars[pivot].style.backgroundColor = "yellow";
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, 200)
+  );
 
-    //determine the left and right pointers and set their colors to orange
-    var left = bars[0];
-    var right = bars[bars.length - 1];
-    left.style.backgroundColor = "orange";
-    right.style.backgroundColor = "orange";
-    console.log(left.style.height + " " + right.style.height);
+  quickSorter(array, 0, array.length-1);
 
-    //perform sorting
-    if(bars.length > 1) {
-      for(let i = 0; i<bars.length; i++) {
-
-      }
-    }
-    console.log('array sorted');
 }
 
-async function partition(arr, start, end) {
-  const pivotValue = arr[end].style.height;
-  let pivotIndex = start;
-  for(let i = start; i < end; i++) {
-    if(arr[i] < pivotValue) {
+async function quickSorter(array, start, end) {
+  let bars = document.querySelectorAll('.element-test');
+  if(start >= end) {
+    return;
+  }
+  //assign orange to all the elements that are being tested
+  console.log('running function');
+  index = await partition(array, start, end);
 
+  await Promise.all([
+    quickSorter(array, start, index-1),
+    quickSorter(array, index+1, end)
+  ]);
+
+}
+
+async function partition(array, start, end) {
+  console.log('running partition');
+
+  let pivotValue = array[end];
+  let pivotIndex = start;
+  for (let i = start; i < end; i++) {
+    if (array[i] < pivotValue) {
+      await swap(array, i, pivotIndex);
+      pivotIndex++;
     }
   }
+  await swap(array, pivotIndex, end);
+
+  return pivotIndex;
+}
+
+async function swap(array, a, b) {
+  console.log("swapping");
+  let bars = document.querySelectorAll('.element-test');
+  await sleep(30);
+  let temp = array[a];
+  array[a] = array[b];
+  array[b] = temp;
+
+
+  bars[a].style.backgroundColor = "orange";
+  bars[b].style.backgroundColor = "orange";
+  await sleep(30);
+
+  let temp2 = bars[a].style.height;
+  bars[a].style.height = bars[b].style.height;
+  bars[b].style.height = temp2;
+
+  await sleep(30);
+  bars[a].style.backgroundColor = "royalblue";
+  bars[b].style.backgroundColor = "royalblue";
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

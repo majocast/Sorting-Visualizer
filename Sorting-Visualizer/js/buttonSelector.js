@@ -4,14 +4,17 @@ function selectedSort() {
   switch(value) {
     case "Bubble Sort":
       console.log('running bubble sort');
-      bubbleSort();
+      bubble();
       break;
     case "Quick Sort":
       console.log('running quick sort');
-      quickSort();
+      quick();
+      break;
+    case "Merge Sort":
+      console.log('running merge sort');
+      merge();
       break;
     default:
       console.log('error selector');
-      break;
   }
 }

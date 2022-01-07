@@ -1,4 +1,4 @@
-async function bubbleSort(delay = 50) {
+async function bubble(delay = 30) {
   console.log("bubble sort function");
   let bars = document.querySelectorAll('.element-test');
   console.log(bars);
@@ -9,11 +9,11 @@ async function bubbleSort(delay = 50) {
     for(let j = i+1; j<bars.length; j++) {
       bars[j].style.backgroundColor = "red";
 
-      //pauses the execution for 300 ms
+      //pauses the execution for 50 ms
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, 30)
       );
       // To store the integer value of jth bar to var1
       var val1 = parseInt(bars[j].style.height);
@@ -42,7 +42,7 @@ async function bubbleSort(delay = 50) {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 50)
+      }, 30)
     );
 
     // Provide skyblue color to the (min-idx)th bar
