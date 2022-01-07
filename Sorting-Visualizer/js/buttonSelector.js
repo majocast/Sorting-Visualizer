@@ -10,9 +10,9 @@ function selectedSort() {
       console.log('running quick sort');
       quick();
       break;
-    case "Merge Sort":
-      console.log('running merge sort');
-      merge();
+    case "Insertion Sort":
+      console.log('running insertion sort');
+      insertion();
       break;
     default:
       console.log('error selector');
