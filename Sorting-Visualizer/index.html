@@ -10,7 +10,7 @@
       <div class="cell-1"> <!--navigation container-->
         <h1 id='projectTitle'>Sorting Visualizer</h1>
         <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="newArray();">
         </div>
         <button type="newArray" name="newArray" onclick="newArray();">Generate New Array</button>
         <button type="Bubble" name="Bubble Sort" onclick="selectedSort();">Bubble Sort</button>
