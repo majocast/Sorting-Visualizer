@@ -1,0 +1,40 @@
+<!--
+Author: Marc Castro
+San Francisco State University, Class of 2023
+Date Completed: 1/12/2022
+Version: 1.0.0
+ -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Sorting Visualizer</title>
+  </head>
+  <body>
+    <nav>
+      <h1 id='projectTitle'>Sorting Visualizer</h1>
+      <div id="algo-container">
+        <button type="newArray" name="newArray" onclick="newArray();">Generate New Array</button>
+        <button type="Bubble" name="Bubble Sort" onclick="selectedSort();">Bubble Sort</button>
+        <button type="Quick" name="Quick Sort" onclick="selectedSort();">Quick Sort</button>
+        <button type="Insertion" name="Insertion Sort" onclick="selectedSort();">Insertion Sort</button>
+        <button type="Heap" name="Heap Sort" onclick="selectedSort();">Heap Sort</button>
+      </div>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onchange="newArray();">
+      </div>
+    </nav>
+    <div id="array-cont"><!--container for sorting elements-->
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/newArray.js"></script>
+    <script type="text/javascript" src="js/buttonSelector.js"></script>
+    <script type="text/javascript" src="js/bubbleSort.js"></script>
+    <script type="text/javascript" src="js/quickSort.js"></script>
+    <script type="text/javascript" src="js/insertSort.js"></script>
+    <script type="text/javascript" src="js/heapSort.js"></script>
+  </body>
+</html>
